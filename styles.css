@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 80px; 
+    flex-grow: 1; 
+}
+
+section {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+}
+
+#landing-page {
+    text-align: center;
+}
+
+button {
+    background-color: #4caf50;
+    color: #e0e0e0;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.answers label {
+    display: block;
+    margin: 10px 0;
+}
+
+.submit-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.submit-btn {
+    background-color: #007bff;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Progress Bar */
+#progress-bar {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 10px;
+}
+
+#progress {
+    background-color: #4caf50;
+    height: 100%;
+    width: 0;
+    transition: width 0.4s ease;
+}
+
+#feedback {
+    text-align: center;
+}
+
+#restart-btn {
+    margin-top: 20px;
+    background-color: #f44336;
+}
+
+#restart-btn:hover {
+    background-color: #d32f2f;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.answers {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    position: relative;
+    padding-left: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.answers input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.answers input[type="radio"] + span {
+    position: relative;
+    padding-left: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #e0e0e0;
+}
+
+.answers input[type="radio"] + span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4caf50;
+    border-radius: 50%;
+    background-color: #1e1e1e;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.answers input[type="radio"]:checked + span::before {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.answers input[type="radio"] + span::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #1e1e1e;
+    transition: transform 0.3s;
+}
+
+.answers input[type="radio"]:checked + span::after {
+    transform: translateY(-50%) scale(1);
+    background-color: #e0e0e0;
+}
+
+.answers:hover input[type="radio"] + span::before {
+    border-color: #45a049;
+}
+
+.answers.correct input[type="radio"]:checked + span {
+    color: green;
+}
+
+.answers.wrong input[type="radio"]:checked + span {
+    color: red;
+}

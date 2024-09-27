@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOROSPE QUIZ PART 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>GOROSPE QUIZ PART 2</h1>
+    </header>
+    <main>
+        <!-- Landing Page Section -->
+        <section id="landing-page">
+            <h2>Welcome to the Web Development Quiz</h2>
+            <p>Test your knowledge of basic web development topics. Select the correct answers to test your knowledge!</p>
+            <button id="start-btn">Start Quiz</button>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-page" style="display:none;">
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <form id="quiz-form">
+                <div id="question-container"></div>
+                <div class="submit-btn-container">
+                    <button id="submit-btn" class="submit-btn">Submit</button>
+                </div>
+            </form>
+
+            <!-- Feedback Section -->
+            <div id="feedback" style="display:none;">
+                <p id="feedback-message"></p>
+                <button id="restart-btn">Restart Quiz</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
